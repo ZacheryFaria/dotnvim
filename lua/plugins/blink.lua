@@ -14,6 +14,6 @@ return { -- override blink.cmp plugin
     completion = { menu = { auto_show = true } },
     fuzzy = { implementation = "rust" },
     -- something else is rendering the signatures
-    -- signature = { enabled = true },
+    signature = { enabled = false },
   },
 }

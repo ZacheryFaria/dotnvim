@@ -39,24 +39,11 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
-      "tsgo",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
-      tsgo = {
-        cmd = { "tsgo", "--lsp", "--stdio" },
-        filetypes = {
-          "javascript",
-          "javascriptreact",
-          "javascript.jsx",
-          "typescript",
-          "typescriptreact",
-          "typescript.tsx",
-        },
-        root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
-      },
       cssmodules_ls = {
         capabilities = {
           definitionProvider = false,
