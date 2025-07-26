@@ -44,6 +44,9 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      elixirls = {
+        cmd = { "elixir-ls" },
+      },
       cssmodules_ls = {
         capabilities = {
           definitionProvider = false,
