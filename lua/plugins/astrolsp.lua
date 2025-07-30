@@ -146,6 +146,17 @@ return {
       if client.name == "vtsls" then
         -- Disable semantic tokens which can be costly
         client.server_capabilities.semanticTokensProvider = nil
+        -- Disable completion and definition providers since tsgo will handle those
+        if client.server_capabilities.completionProvider then
+          client.server_capabilities.completionProvider = false
+        end
+        if client.server_capabilities.definitionProvider then
+          client.server_capabilities.definitionProvider = false
+        end
+        -- Make sure implementation and references providers are enabled for vtsls
+        -- IMPORTANT: Explicitly ensure references provider (gr in Vim) is enabled
+        client.server_capabilities.implementationProvider = true
+        client.server_capabilities.referencesProvider = true
       end
     end,
   },
