@@ -49,6 +49,15 @@ return {
       },
       cssmodules_ls = {
         capabilities = {
+          definitionProvider = true,
+        },
+        excludePatterns = {
+          "**/node_modules/**",
+          -- Add other patterns if needed
+        },
+      },
+      cssls = {
+        capabilities = {
           definitionProvider = false,
         },
       },
@@ -64,6 +73,10 @@ return {
               "**/dist/**",
               "**/out/**",
               "**/build/**",
+              "**/bazel-bin/**",
+              "**/bazel-out/**",
+              "**/bazel-lca/**",
+              "**/bazel-testlogs/**",
               "**/.git/**",
               "**/.cache/**",
             },
