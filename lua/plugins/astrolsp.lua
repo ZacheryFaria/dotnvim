@@ -29,7 +29,6 @@ return {
       disabled = { -- disable formatting capabilities for the listed language servers
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
         -- "lua_ls",
-        -- "vtsls",
         "eslint_d",
         "eslint",
         "vtsls",
@@ -46,9 +45,47 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
       elixirls = {
         cmd = { "elixir-ls" },
+      },
+      vtsls = {
+        settings = {
+          vtsls = {
+            experimental = {
+              completion = {
+                enableServerSideFuzzyMatch = true,
+                entriesLimit = 20,
+              },
+            },
+          },
+          typescript = {
+            tsserver = {
+              maxTsServerMemory = 8192,
+              -- useSyntaxServer = "always",
+            },
+            preferences = {
+              includePackageJsonAutoImports = "off",
+              importModuleSpecifierEnding = "minimal",
+              importModuleSpecifier = "shortest",
+              jsxAttributeCompletionStyle = "braces",
+            },
+            inlayHints = {
+              parameterNames = { enabled = "literals" },
+              parameterTypes = { enabled = true },
+              variableTypes = { enabled = true },
+              propertyDeclarationTypes = { enabled = true },
+              functionLikeReturnTypes = { enabled = true },
+              enumMemberValues = { enabled = true },
+            },
+          },
+          javascript = {
+            preferences = {
+              importModuleSpecifierEnding = "minimal",
+              importModuleSpecifier = "shortest",
+              jsxAttributeCompletionStyle = "braces",
+            },
+          },
+        },
       },
       cssmodules_ls = {
         capabilities = {
@@ -62,47 +99,6 @@ return {
       cssls = {
         capabilities = {
           definitionProvider = false,
-        },
-      },
-      vtsls = {
-        settings = {
-          typescript = {
-            implementationsCodeLens = { enabled = true },
-            referencesCodeLens = { enabled = true },
-            suggest = { completeFunctionCalls = true },
-
-            fileWatcherExclude = {
-              "**/node_modules/**",
-              "**/dist/**",
-              "**/out/**",
-              "**/build/**",
-              "**/bazel-bin/**",
-              "**/bazel-out/**",
-              "**/bazel-lca/**",
-              "**/bazel-testlogs/**",
-              "**/.git/**",
-              "**/.cache/**",
-            },
-
-            disableAutomaticTypeAcquisition = true,
-            tsserver = {
-              maxTsServerMemory = 8192,
-              useSyntaxServer = "auto",
-              watchOptions = {
-                watchFile = "useFsEvents",
-                watchDirectory = "useFsEvents",
-                fallbackPolling = "dynamicPriority",
-              },
-            },
-          },
-        },
-        experimental = {
-          completion = {
-            enableServerSideFuzzyMatch = true,
-            entriesLimit = 300,
-          },
-          useSyntaxServer = "auto",
-          disableAutomaticTypingAcquisition = true,
         },
       },
     },
