@@ -5,7 +5,7 @@ return {
   },
   config = function()
     -- Set the environment variable for directory change
-    vim.env.LAZYGIT_NEW_DIR_FILE = vim.fn.expand("~/.lazygit/newdir")
+    vim.env.LAZYGIT_NEW_DIR_FILE = vim.fn.expand "~/.lazygit/newdir"
 
     -- Create a function that wraps the lazygit call and refreshes neo-tree
     local function lazygit_with_dir_change()
@@ -16,9 +16,7 @@ return {
         pattern = "*",
         callback = function()
           -- Refresh neo-tree to reflect the new working directory
-          if pcall(require, "neo-tree.command") then
-            require("neo-tree.command").execute({ action = "refresh" })
-          end
+          if pcall(require, "neo-tree.command") then require("neo-tree.command").execute { action = "refresh" } end
         end,
         once = true, -- Remove the autocommand after it runs
       })
