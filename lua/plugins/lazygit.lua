@@ -1,5 +1,5 @@
 return {
-  "kdheepak/lazygit.nvim",
+  "ZacheryFaria/lazygit.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
