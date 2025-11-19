@@ -10,9 +10,9 @@ return {
   opts = {
     -- Configuration table of features provided by AstroLSP
     features = {
-      codelens = false, -- disable codelens refresh on start for better performance
+      codelens = true, -- disable codelens refresh on start for better performance
       inlay_hints = false, -- disable inlay hints on start
-      semantic_tokens = false, -- disable semantic token highlighting for better performance
+      semantic_tokens = true, -- disable semantic token highlighting for better performance
     },
     -- customize lsp formatting options
     formatting = {
@@ -157,7 +157,7 @@ return {
       -- Performance optimizations for vtsls
       if client.name == "vtsls" then
         -- Disable semantic tokens which can be costly
-        client.server_capabilities.semanticTokensProvider = nil
+        -- client.server_capabilities.semanticTokensProvider = nil
       end
     end,
   },
