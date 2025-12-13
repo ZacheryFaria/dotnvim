@@ -9,6 +9,7 @@ return {
     elixir.setup {
       nextls = { enable = false },
       elixirls = {
+        cmd = "/opt/homebrew/bin/elixir-ls",
         enable = true,
         settings = elixirls.settings {
           dialyzerEnabled = true,
