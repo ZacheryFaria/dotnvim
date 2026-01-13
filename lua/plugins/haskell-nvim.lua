@@ -16,8 +16,6 @@ return {
               buffer = bufnr,
               callback = function() vim.lsp.codelens.refresh() end,
             })
-            -- Initial refresh of codelens
-            vim.lsp.codelens.refresh()
           end
 
           -- -- Add keybinding for running code lens at cursor
