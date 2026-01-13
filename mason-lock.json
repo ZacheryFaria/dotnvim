@@ -20,7 +20,6 @@
   "ormolu": "0.8.0.2",
   "prettierd": "0.26.2",
   "pyproject-fmt": "2.11.1",
-  "reason-language-server": "1.7.13",
   "ruff": "0.14.11",
   "selene": "0.29.0",
   "some-sass-language-server": "2.3.6",
