@@ -20,11 +20,12 @@
   "prettierd": "0.26.2",
   "pyproject-fmt": "2.11.1",
   "reason-language-server": "1.7.13",
+  "rnix-lsp": "0.2.5",
   "ruff": "0.14.11",
   "selene": "0.29.0",
   "some-sass-language-server": "2.3.6",
   "stylua": "v2.3.1",
   "tree-sitter-cli": "v0.26.3",
-  "uv": "0.9.24",
+  "uv": "0.9.25",
   "vtsls": "0.3.0"
 }
