@@ -39,6 +39,7 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
+      "nixd",
       -- "pyright"
     },
     -- customize language server configuration options passed to `lspconfig`
